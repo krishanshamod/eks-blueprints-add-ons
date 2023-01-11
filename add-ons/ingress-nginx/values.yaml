@@ -11,6 +11,7 @@ ingress-nginx:
         service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
     nodeSelector:
       beta.kubernetes.io/os: linux
+    replicaCount: 3
   defaultBackend:
     nodeSelector:
       beta.kubernetes.io/os: linux
