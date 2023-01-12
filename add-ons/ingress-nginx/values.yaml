@@ -11,7 +11,10 @@ ingress-nginx:
         service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
     nodeSelector:
       beta.kubernetes.io/os: linux
-    replicaCount: 3
+    autoscaling:
+      enabled: true
+      maxReplicas: 50
+      minReplicas: 1
   defaultBackend:
     nodeSelector:
       beta.kubernetes.io/os: linux
